@@ -1,10 +1,32 @@
-user1 = User.create!(email: "test@example.com", password: "password")
-user2 = User.create!(email: "hoge@example.com", password: "password")
+user_list = [
+    { email: "test@example.com", password: "password" },
+    { email: "hoge@example.com", password: "password" },
+    { email: "fuga@example.com", password: "password" }
+]
 
-user1.messages.create!(title: "おはよう", url:"https://www.youtube.com/watch?v=haoU1TIyPEA")
-user2.messages.create!(title: "こんにちは", url:"https://www.youtube.com/watch?v=8G5j6vr1LqA")
-user1.messages.create!(title: "こんばんは", url:"https://www.youtube.com/watch?v=WsW9lNvZN5M")
-user1.messages.create!(title: "おやすみ", url:"https://www.youtube.com/watch?v=3lNnRc0NppU")# This file should contain all the record creation needed to seed the database with its default values.
+movie_list = [
+{ user_id: 1, title: "おはよう", url:"https://www.youtube.com/watch?v=haoU1TIyPEA") },
+{ user_id: 2, title: "こんにちは", url:"https://www.youtube.com/watch?v=8G5j6vr1LqA" },
+{ user_id: 1, title: "こんばんは", url:"https://www.youtube.com/watch?v=WsW9lNvZN5M" },
+{ user_id: 1, title: "おやすみ", url:"https://www.youtube.com/watch?v=3lNnRc0NppU" }
+]
+
+watched_movie_list = [
+{ user_id: 2, movie_id: 1 },
+{ user_id: 3, movie_id: 1 },
+{ user_id: 1, movie_id: 2 },
+{ user_id: 3, movie_id: 2 },
+{ user_id: 3, movie_id: 3 },
+{ user_id: 2, movie_id: 4 }
+]
+
+User.create!(user_list)
+Movie.create!(movie_list)
+Watched_movie.create!(like_list)
+puts '初期データの投入に成功しました!'
+
+
+# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
