@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-   @movies = Movie.all
+    @movies = Movie.all
   end
 # ***** 動画の投稿は管理者画面からのみ行いたい場合は、不要です *****
   def new

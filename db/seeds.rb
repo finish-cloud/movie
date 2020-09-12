@@ -22,7 +22,7 @@ watched_movie_list = [
 
 User.create!(user_list)
 Movie.create!(movie_list)
-Watched_movie.create!(like_list)
+Watched_movie.create!(watched_movie_list)
 puts '初期データの投入に成功しました!'
 
 
